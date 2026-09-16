@@ -64,25 +64,48 @@
         <a href="https://sabasos.github.io/" class="btn btn-ghost" target="_blank" rel="noopener">Read the Docs</a>
       </div>
     </div>
-    <div>
-      <div class="terminal">
-        <div class="terminal-bar">
-          <span class="terminal-dot" style="background:#3A4266;"></span>
-          <span class="terminal-dot" style="background:#3A4266;"></span>
-          <span class="terminal-dot" style="background:#3A4266;"></span>
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--text-faint);margin-left:8px;">sabas-compositor — bash</span>
+    <div class="hero-cards">
+      <div class="hero-card">
+        <div class="hero-card-icon" style="color:#1E90FF;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
         </div>
-        <div class="terminal-body">
-          <div><span class="prompt">$ </span><span class="cmd">mvn clean package -DskipTests</span></div>
-          <div class="out">&gt; BUILD SUCCESS [2.4s]</div>
-          <div><span class="prompt">$ </span><span class="cmd">./scripts/run-sabas-native.sh</span></div>
-          <div class="out">&gt; bootstrap: GraalVM native — no JVM overhead</div>
-          <div class="out">&gt; wayland-server: WAYLAND_DISPLAY=wayland-0</div>
-          <div class="out">&gt; compositor: DRM atomic, VK_EXT_external_memory_dma_buf</div>
-          <div class="out">&gt; gpu: AMD Renoir (card1) — path A selected</div>
-          <div class="out">&gt; scanout: zero-copy LINEAR, 2560×1440 @ 165Hz</div>
-          <div class="ok">&gt; sabas-shell connected — session ready ✓</div>
+        <div class="hero-card-title">Raw Power</div>
+        <div class="hero-card-desc">Vulkan + DRM/KMS driven directly from the JVM. Zero-copy scanout, GC-free render loop, 165Hz bare-metal.</div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-icon" style="color:#7EC8FF;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
+        <div class="hero-card-title">Security First</div>
+        <div class="hero-card-desc">No C attack surface. Every subsystem runs in a supervised JVM with strict memory isolation and no shared native heap.</div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-icon" style="color:#28C840;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div class="hero-card-title">Reliability</div>
+        <div class="hero-card-desc">Three-JVM split isolates compositor, shell, and apps. A crashed app never freezes your desktop or drops a frame.</div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-icon" style="color:#FF6B35;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <div class="hero-card-title">Uniqueness</div>
+        <div class="hero-card-desc">The only desktop OS written entirely in Java — no JNI, no C shims, no wlroots. A genuinely new architecture.</div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-icon" style="color:#A78BFA;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        </div>
+        <div class="hero-card-title">Performance</div>
+        <div class="hero-card-desc">35M ops/s layout hit-test. Sub-millisecond damage compositing. Page-flip paced frame loop with zero timer jitter.</div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-icon" style="color:#34D399;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </div>
+        <div class="hero-card-title">Privacy</div>
+        <div class="hero-card-desc">No telemetry, no cloud dependency, no proprietary blobs. Your hardware, your data, your OS — fully auditable.</div>
       </div>
     </div>
   </div>
