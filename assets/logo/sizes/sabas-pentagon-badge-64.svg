@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="blueFlame" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#0B1F6B"/>
+      <stop offset="45%" stop-color="#1E90FF"/>
+      <stop offset="100%" stop-color="#7EC8FF"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" fill="#ffffff"/>
+
+  <line x1="100" y1="29.45" x2="174.18" y2="83.35" stroke="#8FCBEF" stroke-width="4" stroke-linecap="round"/>
+  <line x1="174.18" y1="83.35" x2="145.86" y2="170.55" stroke="#FF4500" stroke-width="4" stroke-linecap="round"/>
+  <line x1="145.86" y1="170.55" x2="54.14" y2="170.55" stroke="#A2653E" stroke-width="4" stroke-linecap="round"/>
+  <line x1="54.14" y1="170.55" x2="25.82" y2="83.35" stroke="#1E90FF" stroke-width="4" stroke-linecap="round"/>
+  <line x1="25.82" y1="83.35" x2="100" y2="29.45" stroke="#4B0082" stroke-width="4" stroke-linecap="round"/>
+
+  <path d="M100,45.7 A65,65 0 0,1 100,158.3 A65,65 0 0,1 100,45.7 Z" fill="none" stroke="url(#blueFlame)" stroke-width="4.92" stroke-linejoin="round"/>
+  <circle cx="100" cy="102" r="29.02" fill="none" stroke="url(#blueFlame)" stroke-width="4.92"/>
+  <circle cx="100" cy="102" r="18.73" fill="url(#blueFlame)"/>
+  <circle cx="108.53" cy="93.47" r="5.54" fill="#ffffff"/>
+</svg>
