@@ -114,3 +114,25 @@ if (cards.length) {
     timer = setInterval(next, 2500);
   }));
 }
+
+// Desktop screenshot carousel
+const slides = document.querySelectorAll('.screen-slide');
+const screenDots = document.querySelectorAll('.screen-dot');
+let screenCurrent = 0, screenTimer;
+
+function showSlide(idx) {
+  slides[screenCurrent].classList.remove('active');
+  screenDots[screenCurrent].classList.remove('active');
+  screenCurrent = idx;
+  slides[screenCurrent].classList.add('active');
+  screenDots[screenCurrent].classList.add('active');
+}
+
+if (slides.length) {
+  screenTimer = setInterval(() => showSlide((screenCurrent + 1) % slides.length), 3000);
+  screenDots.forEach((dot, i) => dot.addEventListener('click', () => {
+    clearInterval(screenTimer);
+    showSlide(i);
+    screenTimer = setInterval(() => showSlide((screenCurrent + 1) % slides.length), 3000);
+  }));
+}
