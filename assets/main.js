@@ -84,14 +84,24 @@ document.querySelectorAll('.bench-wrap').forEach(el => benchObserver.observe(el)
 // Hero flash card carousel
 const cards = document.querySelectorAll('.hero-card');
 const dots  = document.querySelectorAll('.flash-dot');
-let current = 0, timer;
+let current = 0, timer, swapTimer;
+
+// Sequential crossfade: the outgoing card must finish fading out before the
+// incoming one starts fading in, otherwise both are semi-transparent at once
+// and their text visibly overlaps (matches --hero-card-fade-ms in style.css).
+const FADE_MS = 260;
 
 function showCard(idx) {
-  cards[current].classList.remove('active');
+  if (idx === current) return;
+  clearTimeout(swapTimer);
+  const outgoing = cards[current];
+  outgoing.classList.remove('active');
   dots[current].classList.remove('active');
-  current = idx;
-  cards[current].classList.add('active');
-  dots[current].classList.add('active');
+  dots[idx].classList.add('active');
+  swapTimer = setTimeout(() => {
+    current = idx;
+    cards[current].classList.add('active');
+  }, FADE_MS);
 }
 
 function next() { showCard((current + 1) % cards.length); }
