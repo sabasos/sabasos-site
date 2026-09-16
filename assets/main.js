@@ -80,3 +80,27 @@ const benchObserver = new IntersectionObserver(entries => {
   });
 }, { threshold: 0.1 });
 document.querySelectorAll('.bench-wrap').forEach(el => benchObserver.observe(el));
+
+// Hero flash card carousel
+const cards = document.querySelectorAll('.hero-card');
+const dots  = document.querySelectorAll('.flash-dot');
+let current = 0, timer;
+
+function showCard(idx) {
+  cards[current].classList.remove('active');
+  dots[current].classList.remove('active');
+  current = idx;
+  cards[current].classList.add('active');
+  dots[current].classList.add('active');
+}
+
+function next() { showCard((current + 1) % cards.length); }
+
+if (cards.length) {
+  timer = setInterval(next, 2500);
+  dots.forEach((dot, i) => dot.addEventListener('click', () => {
+    clearInterval(timer);
+    showCard(i);
+    timer = setInterval(next, 2500);
+  }));
+}
